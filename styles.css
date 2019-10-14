@@ -1,0 +1,324 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+
+header {
+    position: relative;
+    background: rgb(32, 19, 30);
+    min-width: 57px;
+    /* width: 100px; */
+    background-color: #555;
+
+}
+
+.icon_bar a {
+    display: block;
+    text-align: center;
+    /* width: 12.5%; */
+    color: white;
+    font-size: 30px;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+}
+
+.icon_bar a:hover {
+    background-color: #000;
+}
+
+.active {
+    background-color: rgb(255, 218, 51);
+}
+
+
+main {
+    display: grid;
+    grid-template: 1fr 2fr / 1fr 3fr;
+    width: 100%;
+}
+
+.header {
+    grid-area: 1 / 1 / 2 / 3;
+    filter: contrast(.68) brightness(.9) saturate(4);
+    background-image: linear-gradient(rgba(192, 109, 53, 0.671),rgba(201, 45, 25, 0.904)),url(img/miasto.jpg);
+    background-position: right top;
+    filter: grayscale(45%);
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+}
+
+.left_container {
+    grid-area: 2 / 1 / 3 / 2;
+    background-image: linear-gradient(rgba(133, 32, 41, 0.836),rgba(124, 45, 111, 0.658)),url(img/wieza.jpg);
+    filter: contrast(120%);
+    position: relative;
+    background-size: cover;
+    background-position: 45%;
+    /* filter: grayscale(1%); */
+}
+
+#left_container_overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.left-container-header {
+    box-sizing: border-box;
+    height: 40%;
+    margin-top: 8%;
+    margin-right: 5%;
+    margin-left: 5%;
+    /* margin-bottom: 10%/ */
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.left-container-header {
+  color: white;
+  font-size: 4vh;
+  font-family: 'Raleway',
+  sans-serif;
+  margin-bottom: 6%;
+}
+
+.actual_city {
+    margin-bottom: 4%;
+}
+.clock  {
+    font-size: 3vh;
+    margin-bottom: 4%;
+    font-family: 'PT Sans',
+    sans-serif;
+}
+
+#today_is {
+    margin-bottom: 2%;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    opacity: 0.5;
+}
+
+#today_weather_temperature {
+    font-size: 7vh;
+    text-shadow:0 2px 20px rgba(0, 0, 0, 0.6);
+    opacity: 0.7;
+}
+
+#today_is_day_of_week {
+    color: palevioletred;
+    font-size: 3vh;
+    font-family: 'Raleway',
+        sans-serif;
+    text-shadow:0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.forecast {
+    margin: 5%;
+    height: 40%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    color: white;
+    font-size: 3vh;
+    font-family: 'Raleway',
+    sans-serif;
+}
+
+.forecast_day {
+    display: grid;
+    font-size: 2.5vh;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 0.8fr 0.7fr;
+}
+
+.next_day {
+    grid-area: auto;
+    justify-self: end;
+    color: rgb(255, 162, 201);
+    text-shadow:0 2px 2px rgba(0, 0, 0, 0.6);
+}
+.next_day_temp {
+    grid-area: auto;
+    justify-self: end;
+    opacity: 0.6;
+}
+
+.next_day_icon {
+    opacity: 0.7;
+    grid-area: auto;
+}
+
+.right_container {
+    background-image: linear-gradient(45deg, rgba(27, 20, 44, 0.959),rgba(75, 69, 129, 0.658)),url(img/krople.jpg);
+    /* background-size: cover; */
+    filter: grayscale(50%);
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.fa-angle-left {
+    grid-area: 1 / 2;
+    opacity: 0.9;
+    color: yellow;
+}
+
+.right_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 18%;
+    margin-top: 2%;
+    margin-right: 4%;
+    margin-left: 4%;
+    margin-bottom: 2%;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+}
+
+.right_header h2 {
+    font-size: 2em;
+    display: inline;
+    color: white;
+}
+
+.icon-right-open {
+    font-size: 2em;
+    color: rgb(255, 218, 51);
+}
+
+.right_header .slider {
+    -webkit-appearance: none;
+    display: inline-block;
+    height: 0.35em;
+    border-radius: 1px;
+    outline: none;
+    background: linear-gradient(to right, rgb(255, 3, 99), rgb(252, 245, 8));
+}
+
+.right_header .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 50%;
+    background: white;
+}
+
+.right_header .slider::-moz-range-thumb {
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 50%;
+    background: white;
+}
+
+.right_header .slider::-moz-range-progress {
+    height: 100%;
+    background: linear-gradient(to right, rgb(255, 3, 99), rgb(252, 245, 8));
+}
+
+.right_header .slider::-moz-range-track {
+    height: 100%;
+    background: rgb(119, 121, 50);
+    /* background: linear-gradient(to right, rgba(255, 3, 99, 0.6), rgba(252, 245, 8, 0.6)); */
+
+}
+
+.start-right-header {
+    display: flex;
+    align-items: center;
+}
+
+.end-right-header {
+    display: flex;
+    align-items: center;
+}
+
+.end-right-header > span {
+    font-size: 2em;
+    margin-left: 2em;
+    margin-right: 4em;
+}
+.letter {
+    color: rgb(180, 179, 179);
+}
+
+#left-border {
+    display: inline-block;
+    border-left: 1.5px solid rgb(180, 179, 179);
+    margin-left: 0.5em;
+    padding-left: 0.5em;
+}
+
+.graph {
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-bottom: 2%;
+    height: 34%;
+}
+
+p {
+    width: 44%;
+    padding: 0 1%;
+    font-size: 15px;
+    line-height: 1.3;
+    color: white;
+    opacity: 0.6;
+    font-family: 'Raleway', sans-serif;
+}
+
+.paragraph {
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.arrow {
+    position: absolute;
+    right: 14%;
+    bottom: 0;
+}
+
+.hexa, .hexa div {
+  margin: 0 auto;
+  transform-origin: 50% 50%;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+}
+.hexa {
+  width: 325px;
+  height: 230px;
+}
+.hexa div {
+  width: 100%;
+  height: 100%;
+}
+.hexa {
+  transform: rotate(120deg);
+  display: inline-block;
+}
+.hex1 {
+  transform: rotate(-60deg);
+}
+.hex2 {
+  transform: rotate(-60deg);
+}
